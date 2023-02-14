@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>DarkMode</title>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+        }
+    </script>
+
+    <style>
+        /* Toggle B */
+        input:checked~.dot {
+            transform: translateX(100%);
+            background-color: #48bb78;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- card -->
+    <div class="flex justify-center items-center h-screen dark:bg-slate-900 dark:text-slate-100">
+        <!-- content div -->
+        <div
+            class="shadow-lg rounded-2xl space-x-3 flex flex-col md:flex-row items-center hover:scale-105 transation duration-500 p-2">
+            <!-- image -->
+            <img class="w-40 p-2 rounded-2xl"
+                src="https://rare-gallery.com/uploads/posts/324508-Nezuko-Cute-Kimetsu-no-Yaiba-4K-iphone-wallpaper.jpg">
+            <!-- text div -->
+            <div class="">
+                <h1 class="text-3xl font-bold mb-1">Nezuko Kamado</h1>
+                <p class="mb-2 text-slate-600 dark:text-slate-400">2 February, 2023</p>
+                <p class="w-96 text-slate-800 mb-2 dark:text-slate-400">Not only is Demon Slayer:Kimetsu no Yaiba is considered one of the
+                    best anime of 2019, but one of the best adventure fantasy animes of all time. It follows Tanjirou
+                    Kamado, whose family was slaughtered by a demon.</p>
+
+                <!-- Toggle B -->
+                <div class="flex justify-between mt-5">
+                    <button class="bg-blue-700 rounded-md py-1 px-3 text-white">See More</button>
+                    <label for="toggleB" class="flex items-center cursor-pointer">
+                        <!-- toggle -->
+                        <div class="relative">
+                            <!-- input -->
+                            <input type="checkbox" id="toggleB" class="sr-only">
+                            <!-- line -->
+                            <div class="block bg-gray-600 w-14 h-8 rounded-full"></div>
+                            <!-- dot -->
+                            <div class="dot absolute left-1 top-1 bg-white w-6 h-6 rounded-full transition"></div>
+                        </div>
+                        <!-- label -->
+                        <div class="ml-3 text-gray-700 font-medium dark:text-slate-100">
+                            DarkMode!
+                        </div>
+                    </label>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const toggleB = document.getElementById("toggleB")
+
+        const changeThemeToDark = () => {
+            document.documentElement.classList.add("dark") 
+            localStorage.setItem("data-theme","dark")
+        }
+
+        const changeThemeToLight = () => {
+            document.documentElement.classList.remove("dark") 
+            localStorage.setItem("data-theme","light")
+        }
+
+        toggleB.addEventListener("click", () => {
+            const theme = localStorage.getItem("data-theme","dark")
+            if(theme === "dark") {
+                changeThemeToLight()
+            } else {
+                changeThemeToDark()
+            }
+        })
+
+        const theme = localStorage.getItem("data-theme","dark")
+        if(theme === "dark") {
+            changeThemeToDark()
+            toggleB.setAttribute("checked", "checked")
+        } else {
+            changeThemeToLight()
+        }
+    </script>
+</body>
+
+</html>

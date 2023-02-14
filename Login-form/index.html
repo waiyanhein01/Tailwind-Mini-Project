@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <!-- Container -->
+    <div class="flex justify-center items-center min-h-screen">
+        <!-- Login Card -->
+        <div class="shadow-lg border p-10 rounded-lg">
+            <h1 class="text-3xl flex justify-center mb-2">Login to Facebook</h1>
+            <input class="border p-3 rounded-lg w-full mb-2 outline-none" type="text" placeholder="Enter your name" />
+            <input class="border p-3 rounded-lg w-full mb-2 outline-none" type="password"
+                placeholder="Enter your password" />
+            <button class="border bg-blue-700 text-white font-sans text-2xl p-2 rounded-lg w-full mb-1">
+                Log in
+            </button>
+
+            <div class="mb-2 flex justify-between">
+                <a class="text-blue-800 underline decoration-blue-600" href="#">Forgotten your password?</a>
+                <a class="text-blue-800 underline decoration-blue-600" href="#">Create new account</a>
+            </div>
+
+            <div class="border border-slate-400 mb-2"></div>
+
+            <!-- btn google and facebook -->
+            <div class="flex justify-between">
+                <div class="flex border border-red-600 rounded-md justify-center px-3 py-1 items-center space-x-2">
+                    <img class="w-8"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/0/05/Facebook_Logo_%282019%29.png/1200px-Facebook_Logo_%282019%29.png"
+                        alt="" />
+                    <button>Facebook</button>
+                </div>
+                <div class="flex border border-red-600 rounded-md justify-center px-5 py-1 space-x-2 items-center">
+                    <img class="w-8"
+                        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/53/Google_%22G%22_Logo.svg/2048px-Google_%22G%22_Logo.svg.png"
+                        alt="" />
+                    <button>Google</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
